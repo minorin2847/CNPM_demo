@@ -6,18 +6,16 @@ public class DetailedInvoiceMaterial implements Serializable {
     private int id;
     private int quantity;
     private int price;
-    private int total;
     private Material material;
 
     public DetailedInvoiceMaterial() {
         super();
     }
 
-    public DetailedInvoiceMaterial(int quantity, int price, int total, Material material) {
+    public DetailedInvoiceMaterial(int quantity, int price, Material material) {
         super();
         this.quantity = quantity;
         this.price = price;
-        this.total = total;
         this.material = material;
     }
 
@@ -48,14 +46,6 @@ public class DetailedInvoiceMaterial implements Serializable {
         this.price = price;
     }
 
-    /* total */
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
 
     /* material */
     public Material getMaterial() {

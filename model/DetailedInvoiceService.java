@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class DetailedInvoiceService implements Serializable {
     private int id;
     private int price;
-    private int total;
     private ServiceStaff serviceStaff;
     private Service service;
 
@@ -13,10 +12,9 @@ public class DetailedInvoiceService implements Serializable {
         super();
     }
 
-    public DetailedInvoiceService(int price, int total, ServiceStaff serviceStaff, Service service) {
+    public DetailedInvoiceService(int price, ServiceStaff serviceStaff, Service service) {
         super();
         this.price = price;
-        this.total = total;
         this.serviceStaff = serviceStaff;
         this.service = service;
     }
@@ -37,15 +35,6 @@ public class DetailedInvoiceService implements Serializable {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    /* total */
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
     }
 
     /* serviceStaff */

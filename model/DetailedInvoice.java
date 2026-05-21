@@ -7,7 +7,6 @@ import java.util.Date;
 public class DetailedInvoice implements Serializable {
     private int id;
     private Date date;
-    private int total;
     private String status;
     private CustomerSlot customerSlot;
     private ArrayList<DetailedInvoiceService> services;
@@ -19,10 +18,9 @@ public class DetailedInvoice implements Serializable {
         materials = new ArrayList<DetailedInvoiceMaterial>();
     }
 
-    public DetailedInvoice(Date date, int total, String status, CustomerSlot customerSlot) {
+    public DetailedInvoice(Date date, String status, CustomerSlot customerSlot) {
         super();
         this.date = date;
-        this.total = total;
         this.status = status;
         this.customerSlot = customerSlot;
         services = new ArrayList<DetailedInvoiceService>();
@@ -45,15 +43,6 @@ public class DetailedInvoice implements Serializable {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    /* total */
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
     }
 
     /* status */

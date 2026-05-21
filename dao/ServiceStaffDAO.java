@@ -14,7 +14,7 @@ public class ServiceStaffDAO extends DAO {
 
     public static ArrayList<ServiceStaff> getServiceStaffs() {
         ArrayList<ServiceStaff> result = new ArrayList<ServiceStaff>();
-        String sql = "SELECT id, name, phone FROM tbl_ServiceStaff WHERE status = 'Available'";
+        String sql = "SELECT id, name, phone FROM tbl_ServiceStaff WHERE status = 'Active'";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -32,5 +32,5 @@ public class ServiceStaffDAO extends DAO {
         }
         return result;
     }
-    
+
 }

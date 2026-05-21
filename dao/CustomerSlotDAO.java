@@ -16,10 +16,11 @@ public class CustomerSlotDAO extends DAO {
 
     public static ArrayList<CustomerSlot> getCustomerSlots() {
         ArrayList<CustomerSlot> customerSlots = new ArrayList<CustomerSlot>();
-        String sql = "SELECT s.id, c.name, c.phone FROM tbl_CustomerSlot cs " +
-                    "INNER JOIN tbl_Slot s ON cs.idtblSlot = s.id " +
-                    "INNER JOIN tbl_Customer c ON cs.idtblCustomer = c.id " +
-                    "WHERE cs.status = 'Pending'";
+        String sql = "SELECT cs.id AS customer_slot_id, s.id AS slot_id, c.name AS customer_name, c.phone AS customer_phone FROM tbl_CustomerSlot cs "
+                +
+                "INNER JOIN tbl_Slot s ON cs.idtblSlot = s.id " +
+                "INNER JOIN tbl_Customer c ON cs.idtblCustomer = c.id " +
+                "WHERE cs.status = 'Pending'";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -30,9 +31,10 @@ public class CustomerSlotDAO extends DAO {
                 Customer customer = new Customer();
                 CustomerSlot customerSlot = new CustomerSlot();
 
-                slot.setId(rs.getInt("s.id"));
-                customer.setName(rs.getString("c.name"));
-                customer.setPhone(rs.getString("c.phone"));
+                customerSlot.setId(rs.getInt("customer_slot_id"));
+                slot.setId(rs.getInt("slot_id"));
+                customer.setName(rs.getString("customer_name"));
+                customer.setPhone(rs.getString("customer_phone"));
                 customerSlot.setSlot(slot);
                 customerSlot.setCustomer(customer);
                 customerSlots.add(customerSlot);
@@ -43,5 +45,5 @@ public class CustomerSlotDAO extends DAO {
 
         return customerSlots;
     }
-    
+
 }

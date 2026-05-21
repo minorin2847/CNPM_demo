@@ -1,0 +1,56 @@
+# Compiled Java classes
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+out/
+
+# NetBeans files
+nbproject/private/
+build/
+dist/
+
+# VS Code files
+.vscode/
+
+# Maven / Gradle
+target/
+build/
+.gradle/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database / local data
+*.db
+*.sqlite
+
+# Generated archives
+*.zip
+*.tar.gz
+*.rar
+
+# Java runtime files
+hs_err_pid*

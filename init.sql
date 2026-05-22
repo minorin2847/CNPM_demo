@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS cnpm;
+USE cnpm;
 -- ==========================================
 -- 1. DROP TABLES IF THEY EXIST (For Clean Setup)
 -- ==========================================
